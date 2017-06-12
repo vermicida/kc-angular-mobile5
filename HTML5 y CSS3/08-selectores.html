@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Selectores</title>
+        <meta charset="UTF-8">
+        <style>
+            /* Selección por valor de un atributo */
+            a[href^="noved"] {
+                color: red;
+            }
+            a[href$="vistas"] {
+                color: green;
+            }
+            a[href*="vie"] {
+                color: deeppink;
+            }
+            /* Selección de primera línea */
+            p::first-line {
+                color: purple;
+            }
+            /* Selección de primera letra */
+            p::first-letter {
+                font-size: 32px;
+            }
+            /* Selección de texto seleccionado */
+            p::selection {
+                background: deeppink;
+                color: greenyellow;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="novedades">Novedades</a>
+            <a href="entrevistas">Entrevistas</a>
+            <a href="reviews">Reviews</a>
+        </nav>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae hic, magnam exercitationem. Illo eius corporis iure minima, laudantium inventore ex fuga autem amet? Laborum, quas, alias nobis quia saepe ullam.</p>
+    </body>
+</html>
