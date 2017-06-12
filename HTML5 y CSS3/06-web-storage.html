@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Web Storage</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+
+            // Comprobamos que Web Storage está disponible.
+            if (typeof(Storage) !== "undefined") {
+                
+                let mensaje;
+
+                // Prueba 1: Almacén local.
+                // Escribimos un valor en el almacén local.
+                localStorage.setItem("valorEnLocal", "Buenas noches KeepCoders!");
+                // Recuperamos un valor del almacén local.
+                mensaje = localStorage.getItem("valorEnLocal");
+
+                // Prueba 2: Almacén de sesión.
+                // Escribimos un valor en el almacén de sesión.
+                sessionStorage.setItem("valorEnSesion", "Estamos de curso web!");
+                // Recuperamos un valor del almacén de sesión.
+                mensaje = sessionStorage.getItem("valorEnSesion");
+
+                alert(mensaje);
+            }
+            // Si no está disponible.
+            else {
+                console.log("El navegador no soporta Web Storage.");
+            }
+
+        </script>
+    </body>
+</html>
