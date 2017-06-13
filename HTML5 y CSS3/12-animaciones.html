@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Animaciones</title>
+        <meta charset="UTF-8">
+        <style>
+            /* Usamos la regla @keyframes para definir la animación */
+            @keyframes cajaBailonga {
+                0% {
+                    background-color: deeppink;
+                }
+                50% {
+                    transform: scale(2) rotate(45deg);
+                    background-color: chartreuse;
+                }
+                100% {
+                    transform: scale(1);
+                    background-color: dimgrey;
+                }
+            }
+
+            /* Una vez definimos la regla, ya podemos usarla */
+            .caja {
+                width: 200px;
+                height: 200px;
+                background-color: dimgrey;
+                animation: cajaBailonga 5s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="caja"></div>
+    </body>
+</html>
