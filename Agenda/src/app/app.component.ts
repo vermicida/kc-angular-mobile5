@@ -13,21 +13,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  title = 'Mi Super Aplicación Angular';
+  contactos: string[];
 
-  contactos: string[] = [
-    'Tim Cook',
-    'Bill Gates',
-    'Elon Musk',
-    'Steve Wozniak',
-    'Sundar Pichai'
-  ];
-
-  constructor() {
-    console.log('Me he instanciado!');
-  }
-
+  // En el hook 'OnInit' inicializamos los datos del componente.
   ngOnInit() {
-    console.log('Estoy vivo!');
+    this.contactos = [
+      'Tim Cook',
+      'Bill Gates',
+      'Elon Musk',
+      'Steve Wozniak',
+      'Sundar Pichai'
+    ];
   }
+
+  eliminarContacto(contacto: string): void {
+    let posicion = this.contactos.indexOf(contacto);
+    this.contactos.splice(posicion, 1);
+  }
+
 }

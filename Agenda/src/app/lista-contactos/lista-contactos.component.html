@@ -1,5 +1,25 @@
 <ul>
-  <li *ngFor="let contacto of datos">
+  <!-- Con la directiva 'NgFor' iteramos sobre una colección. En cada iteración
+       se referencia en la variable indicada el elemento iterado. Además, esta
+       directiva replica el elemento HTML sobre el cual se usa. -->
+
+  <!-- Con '[class.x]' hacemos enlace de clases. En 'x' indicamos una clase CSS y, como
+       valor, una expresión que debe evaluar como boolean: en caso de ser 'true', la
+       clase indicada se establece en el elemento. En caso de ser 'false', se quita. -->
+
+  <!-- Con '[style.x]' hacemos enlace de estilos. En 'x' indicamos un estilo CSS. Como valor,
+       establecemos la expresión que, una vez evaluada, retornará el valor real del estilo. -->
+  <li *ngFor="let contacto of datos"
+      [class.rojo]="esGatesWozniak(contacto)"
+      [style.fontSize]="esCookMusk(contacto)">
+
+    <!-- Con '{{ }}' hacemos interpolación de datos. Se evalúa la expresión
+         indicada y el resultado se pinta en el navegador. -->
     {{ contacto }}
+
+    <!-- Para hacer suscripciones a eventos, envolvemos con paréntesis el nombre del
+         mismo. Tenemos que asociar, además, un manejador. Si queremos acceder a los datos de
+         un evento, tenemos que pasar como parámetro al manejador el objeto '$event'. -->
+    <button (click)="notificarEliminacion(contacto)">Eliminar</button>
   </li>
 </ul>
