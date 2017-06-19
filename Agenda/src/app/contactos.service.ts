@@ -23,6 +23,10 @@ export class ContactosService {
     return this._contactos;
   }
 
+  agregarContacto(contacto: string): void {
+    this._contactos.push(contacto);
+  }
+
   eliminarContacto(contacto: string): void {
     let posicion = this._contactos.indexOf(contacto);
     this._contactos.splice(posicion, 1);
