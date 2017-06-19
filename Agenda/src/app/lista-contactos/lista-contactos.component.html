@@ -9,9 +9,7 @@
 
   <!-- Con '[style.x]' hacemos enlace de estilos. En 'x' indicamos un estilo CSS. Como valor,
        establecemos la expresión que, una vez evaluada, retornará el valor real del estilo. -->
-  <li *ngFor="let contacto of datos"
-      [class.rojo]="esGatesWozniak(contacto)"
-      [style.fontSize]="esCookMusk(contacto)">
+  <li *ngFor="let contacto of datos">
 
     <!-- Con '{{ }}' hacemos interpolación de datos. Se evalúa la expresión
          indicada y el resultado se pinta en el navegador. -->
