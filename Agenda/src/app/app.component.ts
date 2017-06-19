@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ContactosService } from './contactos.service';
+
 @Component({
   // En 'selector' indicamos el elemento HTML donde se instanciará
   // este componente.
@@ -15,20 +17,21 @@ export class AppComponent implements OnInit {
 
   contactos: string[];
 
+  // Para hacer una inyeccción de dependencias necesitamos sí o sí
+  // hacerlo en el constructor de una clase. Tenemos que indicar un
+  // parámetro con un modificador de acceso (obligatorio). Además,
+  // tenemos que anotar su tipo, que no es otro que el servicio a
+  // inyectar.
+  constructor(private _contactosService: ContactosService) { }
+
   // En el hook 'OnInit' inicializamos los datos del componente.
   ngOnInit() {
-    this.contactos = [
-      'Tim Cook',
-      'Bill Gates',
-      'Elon Musk',
-      'Steve Wozniak',
-      'Sundar Pichai'
-    ];
+    this.contactos = this._contactosService.obtenerContactos();
   }
 
   eliminarContacto(contacto: string): void {
-    let posicion = this.contactos.indexOf(contacto);
-    this.contactos.splice(posicion, 1);
+    this._contactosService.eliminarContacto(contacto);
+    this.contactos = this._contactosService.obtenerContactos();
   }
 
 }
