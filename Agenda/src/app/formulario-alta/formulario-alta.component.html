@@ -8,13 +8,69 @@
        'NgModel'. Para obtener la referencia a la instancia 'FormControl' del elemento,
        usamos una template reference variable, a la cual asignamos como valor la propia
        directiva 'NgModel'. -->
+
+  <!-- Nombre del contacto -->
+  <label for="inputNombre">Nombre</label>
   <input
+    id="inputNombre"
+    placeholder="Ej. Tim"
     type="text"
     ngModel
     name="nombre"
-    #nombreRef="ngModel">
+    #nombreRef="ngModel"
+    required>
+  <!-- Con la directiva 'NgIf' escribimos o no un elemento en el DOM, es decir, lo
+       renderizamos o no en el navegador en función de si la expresión indicada
+       como valor resuelve como 'true' o como 'false'. -->
+  <div *ngIf="nombreRef.touched && nombreRef.invalid" class="mensaje-error">
+    El nombre es un dato obligatorio.
+  </div>
 
-  <!-- -->
-  <button type="submit">Guardar contacto</button>
+  <!-- Apellidos del contacto -->
+  <label for="inputApellidos">Apellidos</label>
+  <input
+    id="inputApellidos"
+    placeholder="Ej. Cook"
+    type="text"
+    ngModel
+    name="apellidos">
+
+  <!-- Móvil del contacto -->
+  <label for="inputMovil">Movil</label>
+  <input
+    id="inputMovil"
+    placeholder="Ej. 555 666 777"
+    type="text"
+    ngModel
+    name="movil">
+
+  <!-- Correo electrónico del contacto -->
+  <label for="inputEmail">Correo electrónico</label>
+  <input
+    id="inputEmail"
+    placeholder="Ej. tim.cook@apple.com"
+    type="email"
+    ngModel
+    name="email">
+
+  <!-- Cuenta de Facebook del contacto -->
+  <label for="inputFacebook">Facebook</label>
+  <input
+    id="inputFacebook"
+    placeholder="Ej. tim.cook"
+    type="text"
+    ngModel
+    name="facebook">
+
+  <!-- Cuenta de Twitter del contacto -->
+  <label for="inputTwitter">Twitter</label>
+  <input
+    id="inputTwitter"
+    placeholder="Ej. @timcook"
+    type="text"
+    ngModel
+    name="twitter">
+
+  <button type="submit" [disabled]="formularioContacto.invalid">Guardar contacto</button>
 
 </form>
