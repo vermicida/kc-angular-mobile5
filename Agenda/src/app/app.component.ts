@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 import { ContactosService } from './contactos.service';
 import { Contacto } from './contacto';
@@ -16,7 +17,7 @@ import { Contacto } from './contacto';
 })
 export class AppComponent implements OnInit {
 
-  contactos: Contacto[];
+  contactos: Observable<Contacto[]>;
 
   // Para hacer una inyeccción de dependencias necesitamos sí o sí
   // hacerlo en el constructor de una clase. Tenemos que indicar un

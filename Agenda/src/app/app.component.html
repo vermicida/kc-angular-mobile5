@@ -11,7 +11,7 @@
       que se ha expuesto en éste. Si queremos evaluar una expresión previamente
       a su asignación como valor del atributo, envolvemos con corchetes el atributo. -->
   <lista-contactos
-    [datos]="contactos"
+    [datos]="contactos | async"
     (clickEnEliminar)="eliminarContacto($event)"></lista-contactos>
 
 </div>

@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import "rxjs/add/operator/map";
 
 import { Contacto } from './contacto';
 
@@ -11,7 +14,8 @@ export class ContactosService {
 
   private _contactos: Contacto[];
 
-  constructor() {
+  constructor(private _http: Http) {
+
     this._contactos = [
       new Contacto('Tim Cook'),
       new Contacto('Bill Gates'),
@@ -21,8 +25,20 @@ export class ContactosService {
     ];
   }
 
-  obtenerContactos(): Contacto[] {
-    return this._contactos;
+  obtenerContactos(): Observable<Contacto[]> {
+    return this._http
+               .get('http://localhost:3004/contactos')
+               .map((respuesta: Response) => {
+
+                 let contactos: Contacto[];
+                 let contactosJson: any[] = respuesta.json();
+
+                 contactosJson.forEach((contactoJson: any) => {
+                   contactos.push(new Contacto(contactoJson.nombre));
+                 });
+
+                 return contactos;
+               });
   }
 
   agregarContacto(contacto: Contacto): void {
