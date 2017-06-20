@@ -10,67 +10,108 @@
        directiva 'NgModel'. -->
 
   <!-- Nombre del contacto -->
-  <label for="inputNombre">Nombre</label>
-  <input
-    id="inputNombre"
-    placeholder="Ej. Tim"
-    type="text"
-    ngModel
-    name="nombre"
-    #nombreRef="ngModel"
-    required>
-  <!-- Con la directiva 'NgIf' escribimos o no un elemento en el DOM, es decir, lo
-       renderizamos o no en el navegador en función de si la expresión indicada
-       como valor resuelve como 'true' o como 'false'. -->
-  <div *ngIf="nombreRef.touched && nombreRef.invalid" class="mensaje-error">
-    El nombre es un dato obligatorio.
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="inputNombre">Nombre</label>
+      <input
+        class="u-full-width"
+        id="inputNombre"
+        placeholder="Ej. Tim"
+        type="text"
+        ngModel
+        name="nombre"
+        #nombreRef="ngModel"
+        required>
+      <!-- Con la directiva 'NgIf' escribimos o no un elemento en el DOM, es decir, lo
+          renderizamos o no en el navegador en función de si la expresión indicada
+          como valor resuelve como 'true' o como 'false'. -->
+      <div *ngIf="nombreRef.touched && nombreRef.invalid" class="mensaje-error">
+        El nombre es un dato obligatorio.
+      </div>
+    </div>
   </div>
 
+
   <!-- Apellidos del contacto -->
-  <label for="inputApellidos">Apellidos</label>
-  <input
-    id="inputApellidos"
-    placeholder="Ej. Cook"
-    type="text"
-    ngModel
-    name="apellidos">
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="inputApellidos">Apellidos</label>
+      <input
+        class="u-full-width"
+        id="inputApellidos"
+        placeholder="Ej. Cook"
+        type="text"
+        ngModel
+        name="apellidos">
+    </div>
+  </div>
 
   <!-- Móvil del contacto -->
-  <label for="inputMovil">Movil</label>
-  <input
-    id="inputMovil"
-    placeholder="Ej. 555 666 777"
-    type="text"
-    ngModel
-    name="movil">
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="inputMovil">Movil</label>
+      <input
+        class="u-full-width"
+        id="inputMovil"
+        placeholder="Ej. 555 666 777"
+        type="text"
+        ngModel
+        name="movil">
+    </div>
+  </div>
 
   <!-- Correo electrónico del contacto -->
-  <label for="inputEmail">Correo electrónico</label>
-  <input
-    id="inputEmail"
-    placeholder="Ej. tim.cook@apple.com"
-    type="email"
-    ngModel
-    name="email">
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="inputEmail">Correo electrónico</label>
+      <input
+        class="u-full-width"
+        id="inputEmail"
+        placeholder="Ej. tim.cook@apple.com"
+        type="email"
+        ngModel
+        name="email">
+    </div>
+  </div>
 
   <!-- Cuenta de Facebook del contacto -->
-  <label for="inputFacebook">Facebook</label>
-  <input
-    id="inputFacebook"
-    placeholder="Ej. tim.cook"
-    type="text"
-    ngModel
-    name="facebook">
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="inputFacebook">Facebook</label>
+      <input
+        class="u-full-width"
+        id="inputFacebook"
+        placeholder="Ej. tim.cook"
+        type="text"
+        ngModel
+        name="facebook">
+    </div>
+  </div>
 
   <!-- Cuenta de Twitter del contacto -->
-  <label for="inputTwitter">Twitter</label>
-  <input
-    id="inputTwitter"
-    placeholder="Ej. @timcook"
-    type="text"
-    ngModel
-    name="twitter">
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="inputTwitter">Twitter</label>
+      <input
+        class="u-full-width"
+        id="inputTwitter"
+        placeholder="Ej. @timcook"
+        type="text"
+        ngModel
+        name="twitter">
+    </div>
+  </div>
 
-  <button type="submit" [disabled]="formularioContacto.invalid">Guardar contacto</button>
+  <!-- Botón guardar -->
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <button
+        class="button-primary u-full-width"
+        type="submit"
+        [disabled]="formularioContacto.invalid">
+        Guardar contacto
+      </button>
+    </div>
+  </div>
 
 </form>
