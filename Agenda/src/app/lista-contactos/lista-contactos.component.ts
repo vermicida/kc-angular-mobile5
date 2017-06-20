@@ -21,4 +21,9 @@ export class ListaContactosComponent {
   notificarEliminacion(dato: Contacto): void {
     this.clickEnEliminar.emit(dato);
   }
+
+  // Obtenemos el nombre completo de un contacto concatenando su nombre y apellidos.
+  obtenerNombreCompleto(dato: Contacto): string {
+    return `${dato.nombre} ${dato.apellidos}`;
+  }
 }
