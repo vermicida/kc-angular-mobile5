@@ -20,18 +20,4 @@
   <!-- Zona dinámica donde cargamos las distintas secciones -->
   <router-outlet></router-outlet>
 
-  <formulario-alta
-    (clickEnGuardar)="guardarContacto($event)"></formulario-alta>
-
-  <!-- Para enlazar datos en un componente hijo, basta con indicar el atributo
-       que se ha expuesto en éste. Si queremos evaluar una expresión previamente
-       a su asignación como valor del atributo, envolvemos con corchetes el atributo. -->
-
-  <!-- Cuando trabajamos con 'Observables' en los templates, podemos ayudarnos del
-       pipe 'async'. Este pipe lo que hace es gestionar la suscripción y desuscripción
-       del 'Observable' en cuestión. -->
-  <lista-contactos
-    [datos]="contactos$ | async"
-    (clickEnEliminar)="eliminarContacto($event)"></lista-contactos>
-
 </div>
