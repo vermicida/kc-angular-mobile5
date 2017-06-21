@@ -1,3 +1,28 @@
 h1 {
   text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+nav {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  border-bottom: 1px solid #1EAEDB;
+}
+
+li {
+  display: inline-block;
+}
+
+a {
+  padding: 14px 20px;
+  text-decoration: none;
+  border: 1px solid #1EAEDB;
+}
+
+a.seleccionada {
+  border-bottom: 1px solid white;
 }
