@@ -3,10 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
 import { ContactosService } from './contactos.service';
 import { FormularioAltaComponent } from './formulario-alta/formulario-alta.component';
+import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
+import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
 
 @NgModule({
   // En 'declarations' indicamos todos los componentes, pipes y
@@ -14,13 +17,16 @@ import { FormularioAltaComponent } from './formulario-alta/formulario-alta.compo
   declarations: [
     AppComponent,
     ListaContactosComponent,
-    FormularioAltaComponent
+    FormularioAltaComponent,
+    MisContactosComponent,
+    NuevoContactoComponent
   ],
   // En 'imports' indicamos módulos de los cuáles dependemos.
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   // En 'providers' indicamos los proveedores de todas aquellas
   // piezas que sean susceptibles de ser inyectadas como dependencias.
