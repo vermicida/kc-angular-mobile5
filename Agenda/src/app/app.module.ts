@@ -10,6 +10,7 @@ import { ContactosService } from './contactos.service';
 import { FormularioAltaComponent } from './formulario-alta/formulario-alta.component';
 import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
 import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
+import { OrdenContactosPipe } from './orden-contactos.pipe';
 
 @NgModule({
   // En 'declarations' indicamos todos los componentes, pipes y
@@ -19,7 +20,8 @@ import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.componen
     ListaContactosComponent,
     FormularioAltaComponent,
     MisContactosComponent,
-    NuevoContactoComponent
+    NuevoContactoComponent,
+    OrdenContactosPipe
   ],
   // En 'imports' indicamos módulos de los cuáles dependemos.
   imports: [
